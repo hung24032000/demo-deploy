@@ -16,6 +16,7 @@ interface Provider {
   type: string
 }
 const Login = ({ providers }: Props) => {
+  console.log('providersClient',providers);
   return (
     <div style={{minHeight:'100vh'}}>
       <Head>
