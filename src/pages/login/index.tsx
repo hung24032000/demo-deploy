@@ -24,19 +24,20 @@ const Login = ({ providers }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Login</title>
       </Head>
-      
+
       <div className="login-container">
           <div className="list-auth">
               <ButtonAuth id={providers?.facebook?.id}  name={providers?.facebook?.name} color='red'  />
               <ButtonAuth id={providers?.google?.id}  name={providers?.google?.name} color='red' />
           </div>
-      </div>  
+      </div>
     </div>
   )
 }
 
 export async function getServerSideProps() {
   const providers = await getProviders();
+  console.log('providers',providers);
   return {
     props: {
       providers,
